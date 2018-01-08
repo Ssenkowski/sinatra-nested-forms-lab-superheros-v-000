@@ -13,7 +13,6 @@ class App < Sinatra::Base
         @team = Team.new(name: params[:team][:name],motto: params[:team][:motto])
 
         hero = params[:team][:members]
-
         @super_heroes = hero.map { |hero_params| SuperHero.new({name: hero_params[:name], power: hero_params[:power], bio: hero_params[:bio]})}
       erb :team
     end
