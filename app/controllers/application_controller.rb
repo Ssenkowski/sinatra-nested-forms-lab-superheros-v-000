@@ -15,8 +15,6 @@ class App < Sinatra::Base
         hero = params[:team][:members]
 
         @super_heroes = hero.map { |hero_params| SuperHero.new({name: hero_params[:name], power: hero_params[:power], bio: hero_params[:bio]})}
-        binding.pry
-
       erb :team
     end
 
